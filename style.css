@@ -1,0 +1,129 @@
+body {
+  background: #0a0a0a;
+  color: #eee;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+#bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 30px auto;
+  max-width: 700px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+
+.tile {
+  width: 70px;
+  height: 70px;
+  background: #333;
+  color: #eee;
+  border: 2px solid #666;
+  text-align: center;
+  line-height: 70px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #000;
+  transform: perspective(200px) rotateX(5deg);
+}
+
+.tile:hover {
+  transform: perspective(200px) rotateX(5deg) scale(1.05);
+  box-shadow: 0 0 12px #0ff;
+}
+
+/* Flip animation on reveal */
+.tile.revealed {
+  animation: flip 0.4s ease-in-out;
+}
+
+/* Truth pulse */
+.tile.truth {
+  background: #0a5;
+  animation: pulseTruth 0.8s ease-in-out;
+}
+
+/* Lie pulse */
+.tile.lie {
+  background: #a00;
+  animation: pulseLie 0.8s ease-in-out;
+}
+
+/* Entrance effect for bridge */
+.row .tile {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  animation: tileEnter 0.4s forwards;
+}
+.row:nth-child(1) .tile { animation-delay: 0.1s; }
+.row:nth-child(2) .tile { animation-delay: 0.2s; }
+.row:nth-child(3) .tile { animation-delay: 0.3s; }
+.row:nth-child(4) .tile { animation-delay: 0.4s; }
+
+@keyframes flip {
+  0% { transform: rotateY(0); }
+  50% { transform: rotateY(90deg); }
+  100% { transform: rotateY(0); }
+}
+
+@keyframes pulseTruth {
+  0% { box-shadow: 0 0 5px #0a5; }
+  50% { box-shadow: 0 0 20px #0f5; }
+  100% { box-shadow: 0 0 5px #0a5; }
+}
+
+@keyframes pulseLie {
+  0% { box-shadow: 0 0 5px #a00; }
+  50% { box-shadow: 0 0 20px #f00; }
+  100% { box-shadow: 0 0 5px #a00; }
+}
+
+@keyframes tileEnter {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+#timer {
+  font-size: 2em;
+  margin: 10px;
+}
+
+#scoreboard {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+#panic {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background: #cc0;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 1.4em;
+  color: #0cf;
+}
