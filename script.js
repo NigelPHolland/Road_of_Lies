@@ -1,29 +1,33 @@
-
+// === DOM Elements ===
 const container = document.getElementById('diamond-container');
+const categoryButtons = document.querySelectorAll('.footer-buttons button');
+
+// === Diamond Grid Functions ===
 const columnHeights = [2, 3, 4, 5, 6, 5, 4, 3, 2];
 
 function buildDiamondGrid() {
-columnHeights.forEach((height, colIndex) => {
-  const column = document.createElement('div');
-  column.className = 'column';
+  columnHeights.forEach((height, colIndex) => {
+    const column = document.createElement('div');
+    column.className = 'column';
 
-  for (let rowIndex = 0; rowIndex < height; rowIndex++) {
-    const square = document.createElement('div');
-    square.className = 'square';
-    square.id = `Square${colIndex}${rowIndex}`;
+    for (let rowIndex = 0; rowIndex < height; rowIndex++) {
+      const square = document.createElement('div');
+      square.className = 'square';
+      square.id = `Square${colIndex}${rowIndex}`;
 
-     // Color specific squares yellow
-     if ((colIndex === 4 && rowIndex === 0) || (colIndex === 4 && rowIndex === 5)) {
-      square.style.backgroundColor = 'yellow';
-     }
+      // Color specific squares yellow
+      if ((colIndex === 4 && rowIndex === 0) || (colIndex === 4 && rowIndex === 5)) {
+        square.style.backgroundColor = 'yellow';
+      }
 
-    column.appendChild(square);
-  }
+      column.appendChild(square);
+    }
 
-  container.appendChild(column);
-});
+    container.appendChild(column);
+  });
 }
 
+// === Timer Functions ===
 function startCountdown(duration, display) {
   let timer = duration;
   const interval = setInterval(() => {
@@ -38,6 +42,7 @@ function startCountdown(duration, display) {
   }, 1000);
 }
 
+// === Question Functions ===
 let questionData = [];
 
 async function loadQuestions() {
@@ -52,18 +57,10 @@ async function loadQuestions() {
 
 function assignStatementsToSquares(statements) {
   const allSquares = document.querySelectorAll('.square');
-  
-  /*if (statements.length !== allSquares.length) {
-    console.warn("Mismatch: Number of statements doesn't match number of squares.");
-    return;
-  }
-*/
   allSquares.forEach((square, index) => {
     const statement = statements[index];
-  
-
     if (!statement) return; // Skip if no statement available
-    
+
     // Store the statement text in a data attribute
     square.dataset.statement = statement.text;
 
@@ -71,14 +68,12 @@ function assignStatementsToSquares(statements) {
     square.addEventListener('click', () => {
       square.textContent = statement.text;
       square.style.fontSize = '0.8em'; // Optional: shrink text to fit
-      //square.style.backgroundColor = 'green'; // Change color on click  
       square.style.whiteSpace = 'normal'; // Allow wrapping
     });
   });
 }
 
-const categoryButtons = document.querySelectorAll('.footer-buttons button');
-
+// === UI Event Listeners ===
 categoryButtons.forEach(button => {
   button.addEventListener('click', () => {
     categoryButtons.forEach(btn => btn.classList.remove('selected'));
@@ -86,10 +81,10 @@ categoryButtons.forEach(button => {
   });
 });
 
+// === Initialization ===
 window.onload = () => {
   const display = document.getElementById('timer');
   buildDiamondGrid();
   startCountdown(5 * 60, display);
   loadQuestions();
-
 };
