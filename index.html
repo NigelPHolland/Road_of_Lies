@@ -2,19 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bridge of Lies</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Road of Lies</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Bridge of Lies</h1>
-  <div id="timer">05:00</div>
-  <div id="bridge"></div>
-  <button id="panic">Panic Button</button>
-  <div id="message"></div>
-  <div id="scoreboard">
-    <p>Current crossing: £<span id="crossPot">0</span></p>
-    <p>Team bank: £<span id="teamBank">0</span></p>
+  <header>
+	<div class="header-content">
+		<h1 class="page-title">Road of Lies</h1>
+		<div id="timer">05:00</div>
+	</div>
+  </header>
+  
+
+  <div class="layout">
+    <aside class="sidebar left">
+      <h2>Question</h2>
+	  <p id="question-text"></p>
+    </aside>
+
+    <main class="content">
+      <div id="diamond-container"></div>
+    </main>
+
+    <aside class="sidebar right">
+      <h2>Scores</h2>
+    </aside>
   </div>
+  
+  <footer>
+  <div class="footer-buttons">
+    <button>History</button>
+    <button>Science</button>
+    <button>Literature</button>
+    <button>Geography</button>
+    <button>Pop Culture</button>
+  </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

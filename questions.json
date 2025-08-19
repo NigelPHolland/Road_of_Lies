@@ -1,0 +1,43 @@
+[
+  {
+    "category": "Science",
+    "question": "Science true or false",
+    "statements": [
+      { "text": "1.", "isTrue": true },
+      { "text": "2.", "isTrue": false },
+      { "text": "3s.", "isTrue": true },
+      { "text": "4t.", "isTrue": false },
+      { "text": "5.", "isTrue": true },
+      { "text": "B6.", "isTrue": true },
+      { "text": "7test.", "isTrue": true },
+      { "text": "8test.", "isTrue": true },
+      { "text": "9test.", "isTrue": true },
+      { "text": "10test.", "isTrue": true },
+      { "text": "11test.", "isTrue": true },
+      { "text": "12test.", "isTrue": true },
+      { "text": "13test.", "isTrue": true },
+      { "text": "14test.", "isTrue": true },
+      { "text": "15test.", "isTrue": true },
+      { "text": "16test.", "isTrue": true },
+      { "text": "17test.", "isTrue": true },
+      { "text": "18test.", "isTrue": true },
+      { "text": "19test.", "isTrue": true },
+      { "text": "20test.", "isTrue": true },
+      { "text": "21test.", "isTrue": true },
+      { "text": "22test.", "isTrue": true },
+      { "text": "23test.", "isTrue": true },
+      { "text": "24test.", "isTrue": true },
+      { "text": "25test.", "isTrue": true },
+      { "text": "26test.", "isTrue": true },
+      { "text": "27test.", "isTrue": true },
+      { "text": "28test.", "isTrue": true },
+      { "text": "29test.", "isTrue": true },
+      { "text": "30test.", "isTrue": true },
+      { "text": "31test.", "isTrue": true },
+      { "text": "32test.", "isTrue": true },
+      { "text": "33test.", "isTrue": true },
+      { "text": "34test.", "isTrue": true }
+    
+    ]
+  }
+]
